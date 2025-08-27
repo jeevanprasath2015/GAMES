@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import java.util.Random;
+
+// custom random number generator
+class MyRandom {
+    Random rand = new Random();  // Java's built-in Random
+
+    public int get() {
+        return rand.nextInt(10) + 1; // generate numbers 1–10
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        MyRandom r = new MyRandom(); // use our custom class
+        int s1 = 0;
+        int s2=0;
+        
+        System.out.println("Welcome to the two player game");
+        System.out.println("who gets 100 win");
+        System.out.println("Press Enter to generate numbers...");
+        
+        // ✅ fix 1: loop condition should be < not >
+        while (s1 < 100 && s2 < 100) {
+            // ✅ fix 2: move message inside loop
+            System.out.println("player 1 turns");
+            sc.nextLine(); // waits for Enter
+            int n1 = r.get();
+            s1 += n1;
+            System.out.println("Number: " + n1 + " | Total: " + s1);
+            
+            if (s1 >= 100) break;  // ⚠️ Player 1 can win instantly
+            
+            System.out.println("player 2 turns");
+            sc.nextLine(); // waits for Enter
+            int n2 = r.get();
+            s2 += n2;
+            System.out.println("Number: " + n2 + " | Total: " + s2);
+        }
+        
+        if (s1 >= 100 && s2 >=100) {
+            System.out.println("Tie");
+        } else if (s1>=100) {
+            System.out.println("player 1 wins");
+        } else {
+            System.out.println("Player 2 wins 🎉");
+        }
+
+        sc.close();
+    }
+}
