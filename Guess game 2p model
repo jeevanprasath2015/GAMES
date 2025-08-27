@@ -1,0 +1,43 @@
+import java.util.Scanner;
+import java.util.Random;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+
+        // Generate random number between 1 and 10
+        int randomNumber = rand.nextInt(10) + 1;
+
+        System.out.println("Welcome to the 2 Player Guessing Game!");
+        System.out.println("A number between 1 and 10 has been chosen.");
+        
+        // Player 1 guess
+        System.out.print("Player 1, enter your guess: ");
+        int guess1 = sc.nextInt();
+
+        // Player 2 guess
+        System.out.print("Player 2, enter your guess: ");
+        int guess2 = sc.nextInt();
+
+        System.out.println("The number was: " + randomNumber);
+
+        // Check who is closer
+        int diff1 = Math.abs(randomNumber - guess1);
+        int diff2 = Math.abs(randomNumber - guess2);
+
+        if (diff1 == 0 && diff2 == 0) {
+            System.out.println("Both players guessed it right! It's a tie!");
+        } else if (diff1 == 0) {
+            System.out.println("Player 1 guessed it right! 🎉");
+        } else if (diff2 == 0) {
+            System.out.println("Player 2 guessed it right! 🎉");
+        } else if (diff1 < diff2) {
+            System.out.println("No exact guesses. Player 1 was closer!");
+        } else if (diff2 < diff1) {
+            System.out.println("No exact guesses. Player 2 was closer!");
+        } else {
+            System.out.println("It's a tie! Both players were equally close.");
+        }
+    }
+}
