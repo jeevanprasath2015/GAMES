@@ -15,14 +15,14 @@ public class Main {
     static int checkPosition(int pos) {
         switch (pos) {
             // 🪜 ladders
-            case 5:  System.out.println("You climbed up to 17"); return 17;
-            case 19: System.out.println("You climbed up to 45"); return 45;
-            case 23: System.out.println("You climbed up to 33"); return 33;
-            case 39: System.out.println("You climbed up to 48"); return 48;
-            case 51: System.out.println("You climbed up to 55"); return 55;
-            case 72: System.out.println("You climbed up to 73"); return 73;
-            case 86: System.out.println("You climbed up to 97"); return 97;
-            case 94: System.out.println("You climbed up to 95"); return 95;
+            case 5:  System.out.println("Ladder!,You climbed up to 17"); return 17;
+            case 19: System.out.println("Ladder!,You climbed up to 45"); return 45;
+            case 23: System.out.println("Ladder!,You climbed up to 33"); return 33;
+            case 39: System.out.println("Ladder!,You climbed up to 48"); return 48;
+            case 51: System.out.println("Ladder!,You climbed up to 55"); return 55;
+            case 72: System.out.println("Ladder!,You climbed up to 73"); return 73;
+            case 86: System.out.println("Ladder!,You climbed up to 97"); return 97;
+            case 94: System.out.println("Ladder!,You climbed up to 95"); return 95;
 
             // 🐍 snakes
             case 13: System.out.println("Snake! Down to 7");  return 7;
