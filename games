@@ -4,15 +4,16 @@ import java.util.Random;
 // custom random number generator
 class MyRandom {
     Random rand = new Random();  // Java's built-in Random
-
     public int get() {
         return rand.nextInt(6) + 1; // generate numbers 1–6
     }
 }
 
 public class Main {
-    static int checkPosition(int pos){
-        switch (pos){
+
+    // check snakes and ladders
+    static int checkPosition(int pos) {
+        switch (pos) {
             // 🪜 ladders
             case 5:  System.out.println("You climbed up to 17"); return 17;
             case 19: System.out.println("You climbed up to 45"); return 45;
@@ -36,46 +37,79 @@ public class Main {
         return pos;
     }
 
+    // 🟦 print board method
+    static void printBoard(int s1, int s2) {
+        for (int row = 10; row > 0; row--) {
+            for (int col = 1; col <= 10; col++) {
+                int num;
+                if (row % 2 == 0) {
+                    num = (row - 1) * 10 + col;   // left → right
+                } else {
+                    num = row * 10 - col + 1;    // right → left
+                }
+
+                // Show players
+                if (num == s1 && num == s2) {
+                    System.out.printf("%-6s", "P1P2");
+                } else if (num == s1) {
+                    System.out.printf("%-6s", "P1");
+                } else if (num == s2) {
+                    System.out.printf("%-6s", "P2");
+                } else {
+                    System.out.printf("%-6d", num);
+                }
+            }
+            System.out.println();
+        }
+        System.out.println("--------------------------------------------------");
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         MyRandom r = new MyRandom(); 
         int s1 = 0, s2 = 0;
 
-        System.out.println("Welcome to the Snake and Ladder game");
+        System.out.println("🎲 Welcome to Snake and Ladder 🎲");
         System.out.println("➡️ Rule: You must roll the exact number to reach 100");
         System.out.println("First to reach 100 wins!");
         System.out.println("-------------------------");
 
+        // initial board
+        printBoard(s1, s2);
+
         while (s1 < 100 && s2 < 100) {
             // Player 1 turn
-            System.out.println("Player 1 turn:");
+            System.out.println("Player 1 turn: (press Enter to roll)");
             sc.nextLine();
             int n1 = r.get();
             System.out.println("Player 1 rolled: " + n1);
 
-            if (s1 + n1 <= 100) {   // ✅ exact-100 rule
+            if (s1 + n1 <= 100) {
                 s1 += n1;
                 s1 = checkPosition(s1);
             } else {
                 System.out.println("Roll too high! Stay at " + s1);
             }
             System.out.println("Player 1 at: " + s1);
+            printBoard(s1, s2);
 
             if (s1 == 100) break;
 
             // Player 2 turn
-            System.out.println("Player 2 turn:");
+            System.out.println("Player 2 turn: (press Enter to roll)");
             sc.nextLine();
             int n2 = r.get();
             System.out.println("Player 2 rolled: " + n2);
 
-            if (s2 + n2 <= 100) {   // ✅ exact-100 rule
+            if (s2 + n2 <= 100) {
                 s2 += n2;
                 s2 = checkPosition(s2);
             } else {
                 System.out.println("Roll too high! Stay at " + s2);
             }
             System.out.println("Player 2 at: " + s2);
+            printBoard(s1, s2);
+
             System.out.println("-------------------------");
         }
 
