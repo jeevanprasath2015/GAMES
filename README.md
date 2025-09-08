@@ -120,6 +120,8 @@ Connect backend (Java Spring Boot, Node.js, etc.) to this DB.
 
 ---
 
-👉 Do you want me to draw an ER diagram (visual database design) for this, or should I give you the SQL script for full database creation so you can run it directly?
+
+
+
 
 
