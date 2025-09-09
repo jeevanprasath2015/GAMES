@@ -1,4 +1,4 @@
-# GAMES
+# DATABASE
 
 
 Got it 👍 You want to create a database for your attendance + curriculum activity web app.
