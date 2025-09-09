@@ -1,5 +1,9 @@
 # DATABASE
 
+HERE YOU WANT TO CREATE A DATABASE RIGHT?
+
+HERE U HAVE FULL DATABASE EXPLANTIONS
+
 
 Got it 👍 You want to create a database for your attendance + curriculum activity web app.
 
