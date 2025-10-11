@@ -1,0 +1,11 @@
+{
+    "jeeva": {
+        "password": "scrypt:32768:8:1$xgWrx8CRZl6RPQyO$5a8de3b0d509f3d133f37ab1d28329e70002d937eb7d0f0ac9234fb86b7a28c9450513916bd343c16b88b4c208981aec8759797113be93d7ff2ad4c500ca82a3"
+    },
+    "siva": {
+        "password": "scrypt:32768:8:1$Gn4gxzHonzHx2Yka$2d302f2fc11208bab021763c860c085d229078e17308f453bd85e92163992e057ea0cdc643778f237edffbed484389f67d9c26497f2e4e5b6cbdda434bf4ef77"
+    },
+    "riyaz": {
+        "password": "scrypt:32768:8:1$LKwNzMFRAlLfTELa$db21e48aa563c51d415cdd6cb64ad24b156b5854760b3162db71f12921663388e553fa672c78a3c6b6dbfcd3440f4bec23a8b4dc9be5355cb672e8dd669b62d6"
+    }
+}
